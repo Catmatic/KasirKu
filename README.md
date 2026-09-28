@@ -1,4 +1,4 @@
-# KasirPro — Aplikasi Kasir & Penjualan
+# KasirKu — Aplikasi Kasir & Penjualan
 
 Aplikasi Point of Sale (POS) siap pakai: splash screen, login PIN dengan 3
 role (Admin, Kasir, Supervisor), kasir/transaksi, cetak struk, pembayaran
@@ -13,7 +13,7 @@ gratis agar data (produk, transaksi, pengguna) tersimpan permanen dan bisa
 diakses dari banyak perangkat.
 
 ```
-kasirpro/
+kasirku/
 ├── index.html                 ← aplikasi utama (upload ke GitHub Pages)
 ├── manifest.json              ← file manifest PWA (agar bisa "Install" seperti app Android)
 ├── service-worker.js          ← service worker (cache offline)
@@ -49,21 +49,21 @@ refresh). Untuk penyimpanan permanen, sambungkan ke backend Apps Script
 
 ## 2. Hosting Frontend di GitHub Pages
 
-1. Buat repository baru di GitHub, misalnya `kasirpro`.
+1. Buat repository baru di GitHub, misalnya `kasirku`.
 2. Upload file `index.html` ke root repository (via web UI "Add file →
    Upload files", atau via git):
    ```bash
    git init
    git add index.html
-   git commit -m "Initial commit: KasirPro POS app"
+   git commit -m "Initial commit: KasirKu POS app"
    git branch -M main
-   git remote add origin https://github.com/USERNAME/kasirpro.git
+   git remote add origin https://github.com/USERNAME/kasirku.git
    git push -u origin main
    ```
 3. Di repository: **Settings → Pages → Build and deployment → Source:
    Deploy from a branch → Branch: `main` / folder `/ (root)` → Save**.
 4. Tunggu 1–2 menit, aplikasi akan online di:
-   `https://USERNAME.github.io/kasirpro/`
+   `https://USERNAME.github.io/kasirku/`
 
 ---
 
@@ -73,7 +73,7 @@ Backend ini opsional tapi disarankan agar data produk, transaksi, dan
 pengguna tersimpan permanen (bukan hanya di memory browser).
 
 1. Buka [sheets.google.com](https://sheets.google.com) → buat spreadsheet
-   baru, beri nama misalnya "KasirPro Database".
+   baru, beri nama misalnya "KasirKu Database".
 2. Menu **Extensions → Apps Script**.
 3. Hapus kode default di `Code.gs`, lalu salin-tempel seluruh isi file
    `apps-script/Code.gs` dari folder ini.
@@ -85,13 +85,13 @@ pengguna tersimpan permanen (bukan hanya di memory browser).
    lengkap dengan data awal.
 6. Klik **Deploy → New deployment**:
    - Klik ikon gerigi → pilih tipe **Web app**.
-   - Description: `KasirPro API`
+   - Description: `KasirKu API`
    - Execute as: **Me**
    - Who has access: **Anyone**
    - Klik **Deploy**, lalu **izinkan akses** lagi jika diminta.
 7. Salin **URL Web app** yang muncul (formatnya
    `https://script.google.com/macros/s/AKfycb.../exec`).
-8. Buka aplikasi KasirPro → menu **Pengaturan → Backup Data** → tempel URL
+8. Buka aplikasi KasirKu → menu **Pengaturan → Backup Data** → tempel URL
    tersebut di kolom "URL Web App Apps Script" → Simpan.
 
 > Catatan: setiap kali Anda mengedit ulang `Code.gs`, Anda perlu membuat
@@ -125,13 +125,13 @@ gunakan salah satu cara berikut:
 3. Tempel kode berikut:
    ```html
    <iframe
-     src="https://USERNAME.github.io/kasirpro/"
+     src="https://USERNAME.github.io/kasirku/"
      style="width:100%; height:100vh; border:0; border-radius:12px; overflow:hidden;"
      allow="camera; clipboard-write"
      loading="lazy">
    </iframe>
    ```
-4. Publikasikan halaman. Aplikasi KasirPro akan tampil penuh di dalam
+4. Publikasikan halaman. Aplikasi KasirKu akan tampil penuh di dalam
    halaman Blogger tersebut.
 
 ### Cara B — Tempel langsung sebagai HTML Gadget
@@ -148,7 +148,7 @@ gunakan salah satu cara berikut:
 ## 5. PWA — Install seperti aplikasi Android
 
 Aplikasi ini sudah dilengkapi `manifest.json` + `service-worker.js` sehingga:
-- Muncul banner **"Pasang KasirPro"** otomatis di bagian bawah layar (mobile)
+- Muncul banner **"Pasang KasirKu"** otomatis di bagian bawah layar (mobile)
   yang memungkinkan pengguna menambahkan aplikasi ke layar utama tanpa
   melalui Play Store.
 - Setelah dipasang, aplikasi terbuka **full-screen tanpa address bar**,
