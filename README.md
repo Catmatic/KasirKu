@@ -221,3 +221,4 @@ async function apiGet(action, params = '') {
 Ini sengaja dipisah agar aplikasi tetap bisa dipakai instan tanpa setup
 backend (cocok untuk demo/testing), namun siap diintegrasikan penuh saat
 Anda butuh data permanen multi-perangkat.
+# KasirKu
